@@ -11,19 +11,30 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="category-form">
+    <div class="name-and-img-flex">
+      <%= form.text_field :name, placeholder:"Category name" %>
+      <div>
+        
+        <div class="image-upload">
+          <label for="file-input">
+            <i class="fa fa-camera" aria-hidden="true"></i>
+          </label>
+      
+         <%= form.file_field :categoryImage, id:"file-input"%>
+      </div> 
+
+      </div>
+    </div>
+  
+  
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, placeholder:"Say something about it.." %>
   </div>
-    <div>
-      <%= form.file_field :categoryImage %>
-    </div>
-  <div>
+   
+  <div class="c-btn">
     <%= form.submit %>
   </div>
+  </div>  
 <% end %>

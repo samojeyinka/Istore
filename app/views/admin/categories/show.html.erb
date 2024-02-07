@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+</p>
+
+
 
 <%= render @admin_category %>
 
-<div>
-  <%= link_to "Edit this category", edit_admin_category_path(@admin_category) %> |
-  <%= link_to "Back to categories", admin_categories_path %>
+  <div class="c-actions-flex">
+    <%= link_to edit_admin_category_path(@admin_category), class:"btn btn-success" do %>
+      <span>Edit</span>
+      <i class="fa-solid fa-pen-to-square"></i>
+      <% end %>
 
-  <%= button_to "Destroy this category",[:admin, @admin_category], method: :delete %>
-</div>
+        <%= link_to [:admin, @admin_category], data:{turbo_method: :delete, turbo_confirm:"Are you sure?"}, class:"btn
+          btn-danger" do %>
+          <span>Delete</span>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+          <% end %>
+  </div>
