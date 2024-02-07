@@ -1,4 +1,4 @@
-<div id="<%= dom_id category %>">
+<div>
   <p>
     <strong>Name:</strong>
     <%= category.name %>
@@ -9,4 +9,12 @@
     <%= category.description %>
   </p>
 
+  <div>
+   
+    <%= category.categoryImage.present? ? image_tag(category.categoryImage, class:"category-image") : image_tag("http://via.placeholder.com/300", class:"category-image") %>
+     
+  </div>
+
 </div>
+
+

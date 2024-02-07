@@ -46,9 +46,13 @@
     list-style: none !important;
  }
  
+ button{
+   border: none;
+   outline: none;
+ }
  main {
     flex: 1;
-    padding: 20px;
+    padding: 10px;
     /* Add padding as needed */
  }
  
@@ -65,6 +69,13 @@
  
  
  .page {
-    padding-left: 15rem;
-    background: var(--body-color);
+   padding: 1.7rem 0rem 0 15rem;
+   width: 90%;
+   margin: auto !important;
+   background: var(--body-color);
  }
+
+
+//  Categories styling
+
+
