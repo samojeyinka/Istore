@@ -1,0 +1,78 @@
+<!-- Large screen header start -->
+<header>
+    <div class="logo-box">
+
+        <%= image_tag('logo', class:"logo-img") %>
+            <span class="logo-txt">E-STOR<small>E</small></span>
+    </div>
+    <nav>
+
+        <ul>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                    <span>Dashboard</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    <span>Analytics</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    <span>Orders</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span>Products</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                    <span>Categories</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa-solid fa-users nav-icon"></i>
+                    <span>Users</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-flag" aria-hidden="true"></i>
+                    <span>Reports</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                    <span>Notifications</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                    <span>Advertisement</span>
+                    <% end %>
+            </li>
+
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>Message</span>
+                    <% end %>
+            </li>
+
+
+
+        </ul>
+    </nav>
+</header>
+<!-- Large screen header end -->

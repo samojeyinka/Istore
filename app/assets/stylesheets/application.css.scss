@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+ 
+ 
+ :root {
+    --body-color: #ebeff9;
+    --navbar-color: #fff;
+    --primary-color: #5c4dfe;
+    --primary-light-color: #f6f5ff;
+    --minor-color: #262626;
+    --text-color: #666666;
+    --trans-1: .1s;
+    --trans-2: .2s;
+    --trans-3: .3s;
+    --trans-4: .4s;
+    --trans-5: .5s;
+    --trans-6: .6s;
+ }
+ 
+ 
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ }
+ 
+ a {
+    text-decoration: none !important;
+ }
+ 
+ li {
+    list-style: none !important;
+ }
+ 
+ main {
+    flex: 1;
+    padding: 20px;
+    /* Add padding as needed */
+ }
+ 
+ body {
+    margin: 0;
+    padding: 0;
+    background: var(--body-color);
+    display: flex;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+ 
+ }
+ 
+ 
+ 
+ 
+ .page {
+    padding-left: 15rem;
+    background: var(--body-color);
+ }

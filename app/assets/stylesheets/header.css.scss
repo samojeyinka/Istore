@@ -1,0 +1,176 @@
+header {
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15rem;
+    height: 100vh;
+    background: var(--navbar-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.logo-box .logo-img {
+    border-radius: .3rem;
+    width: 4rem;
+}
+
+.logo-box .logo-txt {
+    color: var(--minor-color);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.logo-box .logo-txt small {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+
+}
+
+nav ul li {
+    width: 100%;
+    padding: 1rem .5rem;
+    position: relative;
+    border-radius: .3rem;
+}
+
+nav ul li:hover {
+    background: var(--primary-light-color);
+}
+
+
+nav ul li a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.small-screen-navbar {
+    display: none;
+}
+
+.small-screen-menu {
+    display: none;
+    overflow: hidden;
+}
+
+
+.overlay {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    body {
+        display: block;
+    }
+
+    main {
+        flex: 0;
+        padding: 0;
+    }
+
+    header {
+        display: none;
+    }
+
+    .page {
+        padding-left: 0px;
+    }
+
+    .small-screen-navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        background: var(--navbar-color);
+        color: var(--minor-color);
+    }
+
+    .small-screen-navbar .fa {
+        cursor: pointer !important;
+    }
+
+    .small-screen-navbar .hamburger {
+        font-size: 1.8rem;
+    }
+
+    .small-screen-navbar .notify-box {
+        padding: .5rem .6rem;
+        border-radius: 50%;
+        border: 2px solid var(--body-color);
+
+    }
+
+    .small-screen-navbar .fa-bell {
+        font-size: 1.2rem;
+        position: relative;
+    }
+
+    .small-screen-navbar .fa-bell::after {
+        content: '';
+        width: 4px;
+        height: 4px;
+        background: #ff0000;
+        position: absolute;
+        top: -5px;
+        right: 0;
+        border-radius: 50%;
+    }
+
+    .small-screen-menu {
+        height: 100%;
+        padding: .6rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: var(--navbar-color);
+        display: none;
+    }
+
+    .small-screen-menu .logo-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .small-screen-menu .logo-box .fa-times {
+        font-size: 1.1rem;
+        color: var(--text-color);
+        cursor: pointer;
+        border: 1px solid #ff0000;
+        border-radius: 50%;
+        padding: .1rem .25rem;
+        transition: var(--trans-1) ease-in-out;
+    }
+
+    .small-screen-menu .logo-box .fa-times:hover {
+        transform: scale(1.1);
+    }
+
+    .overlay {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.626);
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: none;
+    }
+
+}

@@ -1,0 +1,98 @@
+<!-- small screen header start -->
+<div class="overlay" id="overlay"></div>
+<div class="small-screen-navbar">
+    <i class="fa fa-bars hamburger" id="openMenu" onclick="openMenu()"></i>
+    <span class="notify-box">
+        <i class="fa fa-bell"></i>
+    </span>
+</div>
+<div class="small-screen-menu" id="menu">
+    <div class="logo-box">
+        <%= image_tag('logo', class:"logo-img") %>
+            <i class="fa fa-times" aria-hidden="true" onclick="closeMenu()"></i>
+    </div>
+    <nav>
+
+        <ul>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                    <span>Dashboard</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    <span>Analytics</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    <span>Orders</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span>Products</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                    <span>Categories</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa-solid fa-users nav-icon"></i>
+                    <span>Users</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-flag" aria-hidden="true"></i>
+                    <span>Reports</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                    <span>Notifications</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                    <span>Advertisement</span>
+                    <% end %>
+            </li>
+
+            <li>
+                <%= link_to admin_path do %>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>Message</span>
+                    <% end %>
+            </li>
+
+
+
+        </ul>
+    </nav>
+</div>
+<!-- small screen header start -->
+
+
+<script>
+    function openMenu() {
+        document.getElementById("menu").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function closeMenu() {
+        document.getElementById("menu").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+</script>
