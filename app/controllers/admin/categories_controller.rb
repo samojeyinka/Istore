@@ -8,7 +8,8 @@ class Admin::CategoriesController < AdminController
 
 
   def show
-    
+    @category = Category.find(params[:id])
+    @products = @category.products
   end
 
 

@@ -19,3 +19,20 @@
 
 
 
+  <!-- start -->
+  <div class="category-products mt-2">
+    <h3><b><%= @admin_category.name %>' products</b></h3>
+  <section class="crud">
+    <% if @products.empty? %>
+    <p class="text-center">No product is associated with "<%= @admin_category.name %>" yet.</p>
+    <% else %>
+  <%= render "shared/products", obj:@products %>
+  <% end %>
+  </section>
+</div>
+  
+  
+  
+  
+  
+  

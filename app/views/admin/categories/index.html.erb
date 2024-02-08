@@ -1,49 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+</p>
 
-
-<section class="crud">
-  <div class="c-top">
-    <h2>Categories</h2>
-    <button type="button"><%= link_to "New category", new_admin_category_path %></button>
-  </div>
-  <div class="c-table-box">
-    <table>
-      <thead>
-        <th>Thumbnail</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Products NO</th>
-        <th>View</th>
-      </thead>
-    <% @admin_categories.each do |category| %>
-    
-      <tbody>
-        <td>
-          <div class="crud-image-box">
-          <%= category.categoryImage.present? ? image_tag(category.categoryImage, class:"crud-image") : image_tag("http://via.placeholder.com/300", class:"crud-image") %>
-        </div>
-        </td>
-        <td class="c-name">
-          <%= category.name %>
-        </td>
-        <td class="c-dp">
-          <%= category.description %>
-        </td>
-        <td>
-          45
-        </td>
-        <td class="c-sm">
-          <button><%= link_to "See more" ,[:admin, category]  %></button>
-        </td>
-      </tbody>
-  
-    <% end %>
-  </table>
-  </div>
-
-</section>
-
-
-
-
-
+<% if @admin_categories.empty? %>
+  <p class="text-center">No category yet.</p>
+  <% else %>
+    <%= render "shared/categories" , obj:@admin_categories %>
+      <% end %>

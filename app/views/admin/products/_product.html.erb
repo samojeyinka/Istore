@@ -1,31 +1,3 @@
-<!-- <div id="<%= dom_id product %>">
-  <p>
-    <strong>Name:</strong>
-    <%= product.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= product.category_id %>
-  </p>
-
-  <p>
-    <strong>Active:</strong>
-    <%= product.active %>
-  </p>
-
-</div> -->
-
 <section class="crud">
   <div class="c-top pd">
     <h2>
@@ -39,11 +11,13 @@
 
   <div class="c-details">
     <div class="c-details-tn pd-tns-flex">
-      <% product.productImages.each do |image| %>
-      <div class="pd-tn">
-      </div>
-      <%= image_tag(image) %>
-      <% end %>
+      <% if product.productImages.any? %>
+        <% product.productImages.each do |image| %>
+          <%= image_tag(image) %>
+            <% end %>
+              <% else %>
+                <%= image_tag("http://via.placeholder.com/300", class:"crud-image") %>
+                  <% end %>
     </div>
 
     <div class="price-category mt-3">

@@ -1,0 +1,46 @@
+<div class="c-table-box">
+    <table>
+        <thead>
+            <th colspan="2">Product</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Active</th>
+            <th>View</th>
+        </thead>
+
+        <% obj.each do |product| %>
+            <tbody>
+                <td>
+                    <div class="crud-image-box">
+                        <% if product.productImages.any? %>
+                            <%= image_tag(product.productImages.first, class:"crud-image") %>
+                                <% else %>
+                                    <%= image_tag("http://via.placeholder.com/50", class:"crud-image") %>
+                                        <% end %>
+                    </div>
+                </td>
+                <td class="c-name">
+                    <%= truncate(product.name,length:30) %>
+                </td>
+                <td class="c-dp">
+                    <%= truncate(product.description, length:90) %>
+                </td>
+                <td>
+                    ₦<%= (product.price).to_s %>
+                </td>
+                <td>
+                    <%= product.category.name %>
+                </td>
+                <td>
+                    <%= product.active %>
+                </td>
+                <td class="c-sm">
+                    <button>
+                        <%= link_to "See more" ,[:admin, product] %>
+                    </button>
+                </td>
+            </tbody>
+            <% end %>
+    </table>
+</div>
