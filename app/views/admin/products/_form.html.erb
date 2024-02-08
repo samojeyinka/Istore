@@ -11,32 +11,51 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="crud-form">
+    <div class="name-and-img-flex">
+      <%= form.text_field :name, placeholder:"Product name" %>
+      <div>
+        
+        <div class="image-upload">
+          <label for="file-input">
+            <i class="fa fa-camera" title="Upload multiple images" aria-hidden="true"></i>
+          </label>
+      
+          <%= form.file_field :productImages, multiple: true, id:"file-input" %>
+      </div> 
+
+      </div>
+    </div>
+  
+  
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, placeholder:"Product description..." %>
   </div>
 
+ <div class="price-active">
   <div>
-    <%= form.label :price, style: "display: block" %>
+    <%= form.label :price, style: "display: block" %>₦
     <%= form.number_field :price %>
   </div>
 
-  <div>
-    <%= form.label :category_id, style: "display: block" %>
-    <%= form.text_field :category_id %>
-  </div>
-
-  <div>
-    <%= form.label :active, style: "display: block" %>
+  <div class="active-box">
+    <%= form.label :active, style: "display: block" %>:
     <%= form.check_box :active %>
   </div>
+ </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+ <div class="c-input">
+  <%= form.label :category_id, style: "display: block" %>
+  <%= form.collection_select :category_id, Category.order(:name), :id,:name %>
+</div>
+
+<div class="c-btn">
+  <%= form.submit %>
+</div>
+</div>
+   
+ 
+
 <% end %>
+

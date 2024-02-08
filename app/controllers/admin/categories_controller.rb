@@ -8,6 +8,7 @@ class Admin::CategoriesController < AdminController
 
 
   def show
+    
   end
 
 

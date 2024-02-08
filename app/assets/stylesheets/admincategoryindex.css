@@ -1,34 +1,34 @@
-.categories {}
+.crud {}
 
-.categories .c-top {
+.crud .c-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.categories .c-top h2 {
+.crud .c-top h2 {
     font-size: 1.8rem;
     font-weight: 400;
 }
 
-.categories .c-top button {
+.crud .c-top button {
     padding: .7rem 1rem;
     background: var(--primary-color);
     border-radius: .2rem;
 }
 
-.categories .c-top button a {
+.crud .c-top button a {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--navbar-color);
 }
 
-.categories .c-table-box {
+.crud .c-table-box {
     margin: 3rem 0;
 
 }
 
-.categories .c-table-box table {
+.crud .c-table-box table {
     margin: 2rem 0;
     width: 100%;
     text-align: left;
@@ -65,50 +65,50 @@ table td {
     color: var(--text-color);
 }
 
-.categories td.c-name {
+.crud td.c-name {
     font-weight: 600;
 }
 
-.categories td.c-dp {
+.crud td.c-dp {
     width: 40%;
 }
 
-.categories td.c-sm button {
+.crud td.c-sm button {
     padding: .2rem;
     border-radius: .2rem;
     border: 1px solid var(--primary-color);
 }
 
-.categories td.c-sm button a {
+.crud td.c-sm button a {
     font-weight: 600;
     color: var(--primary-color);
 }
 
-.categories table thead {
+.crud table thead {
     text-align: left;
 }
 
-.categories table tbody {
+.crud table tbody {
     text-align: left;
 }
 
-table .category-image-box {
+table .crud-image-box {
     width: 4rem;
     height: 4rem;
 }
 
-table .category-image {
+table .crud-image {
     width: 100%;
     height: 100%;
 }
 
 /* category creation page */
 
-.new-category-box {
+.new-crud-box {
     margin: 2rem 0;
 }
 
-.category-form {
+.crud-form {
     padding: 1rem;
     width: 55%;
     margin: auto;
@@ -140,7 +140,7 @@ table .category-image {
     display: none;
 }
 
-.category-form textarea {
+.crud-form textarea {
     padding: .4rem;
     border: 1px solid var(--primary-color);
     min-width: 100%;
@@ -150,7 +150,7 @@ table .category-image {
     border-radius: .4rem;
 }
 
-.category-form .c-btn input {
+.crud-form .c-btn input {
     font-size: 1.1rem;
     font-weight: 600;
     padding: .5rem;
@@ -183,13 +183,76 @@ table .category-image {
     color: var(--text-color);
 }
 
+
 .c-actions-flex{
     margin: 1rem 0;
     display: flex;
     justify-content: space-between;
 }
+
+/* product new page additional styling */
+
+.price-active{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-active label{
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.price-active input,.c-input select{
+    padding: .4rem;
+    border: 1px solid var(--primary-color);
+    border-radius: .4rem;
+    
+}
+
+.price-active .active-box{
+    display: flex;
+    gap: .4rem;
+}
+
+.c-input{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Product show page */
+
+.c-details .pd-tns-flex{
+display: flex;
+gap: .5rem;
+overflow: auto ;
+}
+
+.crud .pd h2{
+    width: 90%;
+}
+
+.price-category{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-sec{
+    color: #fff;
+}
+.pd-box{
+    font-size: 1rem !important;
+    padding: .7rem;
+    background:var(--navbar-color) ;
+    color: #000 !important;
+    border-radius: .4rem;
+}
 @media screen and (max-width: 768px) {
-    .category-form {
+    .crud-form {
         width: 100%;
     }
 

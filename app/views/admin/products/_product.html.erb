@@ -1,4 +1,4 @@
-<div id="<%= dom_id product %>">
+<!-- <div id="<%= dom_id product %>">
   <p>
     <strong>Name:</strong>
     <%= product.name %>
@@ -24,4 +24,43 @@
     <%= product.active %>
   </p>
 
-</div>
+</div> -->
+
+<section class="crud">
+  <div class="c-top pd">
+    <h2>
+      <%= product.name %>
+    </h2>
+    <button type="button">
+      <%= link_to "Back" , admin_products_path %>
+    </button>
+  </div>
+
+
+  <div class="c-details">
+    <div class="c-details-tn pd-tns-flex">
+      <% product.productImages.each do |image| %>
+      <div class="pd-tn">
+      </div>
+      <%= image_tag(image) %>
+      <% end %>
+    </div>
+
+    <div class="price-category mt-3">
+      <p class="btn btn-info text-white">
+        ₦<%= product.price %>
+      </p>
+      <p class="btn btn-secondary text-white">
+        <%= product.category.name %>
+      </p>
+    </div>
+
+    <p class="pd-box">
+      <%= product.description %>
+    </p>
+
+
+
+  </div>
+
+</section>
