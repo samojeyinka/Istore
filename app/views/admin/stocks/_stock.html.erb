@@ -1,17 +1,39 @@
-<div id="<%= dom_id stock %>">
-  <p>
-    <strong>Product:</strong>
-    <%= stock.product_id %>
-  </p>
 
-  <p>
-    <strong>Amount:</strong>
-    <%= stock.amount %>
-  </p>
 
-  <p>
-    <strong>Size:</strong>
-    <%= stock.size %>
-  </p>
+<section class="crud">
+  <div class="c-top pd">
+    <h2>
+      <%= stock.product.name %>
+    </h2>
+    <button type="button">
+      <%= link_to "Back" , admin_product_stocks_path %>
+    </button>
+  </div>
 
-</div>
+
+  <div class="c-details">
+    <div class="c-details-tn pd-tns-flex">
+      <% if stock.product.productImages.any? %>
+        <% stock.product.productImages.each do |image| %>
+          <%= image_tag(image) %>
+            <% end %>
+              <% else %>
+                <%= image_tag("http://via.placeholder.com/300", class:"crud-image") %>
+                  <% end %>
+    </div>
+    <div class="price-category mt-3">
+      
+      <p class="btn btn-info text-white">
+        <b>SIZE</b>:
+        <%= stock.size %>
+      </p>
+     
+      <p class="btn btn-secondary text-white">
+        <b>AMOUNT</b>:
+        <%= stock.amount %>
+      </p>
+    </div>
+
+  </div>
+
+</section>

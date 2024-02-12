@@ -1,4 +1,4 @@
-<%= form_with(model: [:admin,admin_stock]) do |form| %>
+<%= form_with(model: [:admin, @product, admin_stock]) do |form| %>
   <% if admin_stock.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(admin_stock.errors.count, "error") %> prohibited this admin_stock from being saved:</h2>
@@ -11,22 +11,20 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :product_id, style: "display: block" %>
-    <%= form.text_field :product_id %>
-  </div>
+  <div class="crud-form ">
 
-  <div>
+     <div class="stock-input">
     <%= form.label :amount, style: "display: block" %>
     <%= form.number_field :amount %>
   </div>
 
-  <div>
+  <div class="stock-input">
     <%= form.label :size, style: "display: block" %>
     <%= form.text_field :size %>
   </div>
 
-  <div>
+  <div class="c-btn">
     <%= form.submit %>
   </div>
+  </div>  
 <% end %>

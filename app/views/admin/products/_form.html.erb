@@ -50,6 +50,12 @@
   <%= form.collection_select :category_id, Category.order(:name), :id,:name %>
 </div>
 
+<% unless admin_product.new_record? %>
+<div class="my-5">
+  <%= link_to "Product Stock", admin_product_stocks_path(admin_product), class: "underline" %>
+</div>
+<% end %>
+
 <div class="c-btn">
   <%= form.submit %>
 </div>

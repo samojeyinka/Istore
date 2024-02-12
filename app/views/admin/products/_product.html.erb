@@ -24,9 +24,15 @@
       <p class="btn btn-info text-white">
         ₦<%= product.price %>
       </p>
-      <p class="btn btn-secondary text-white">
-        <%= product.category.name %>
-      </p>
+
+      <%= link_to admin_product_stocks_path(product), class:"btn btn-warning" do %>
+        <span>Stocks</span>
+        <i class="fa fa-cart" aria-hidden="true"></i>
+        <% end %>
+
+          <p class="btn btn-secondary text-white">
+            <%= product.category.name %>
+          </p>
     </div>
 
     <p class="pd-box">

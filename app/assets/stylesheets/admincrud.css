@@ -271,9 +271,23 @@ overflow: auto;
     color: #000 !important;
     border-radius: .4rem;
 }
+
+/* Stock */
+
+.crud-form .stock-input input{
+    padding: .8rem;
+    width: 70%;
+    border: 1px solid var(--primary-color);
+    border-radius: .4rem;
+}
 @media screen and (max-width: 768px) {
     .crud-form {
         width: 100%;
     }
+
+    
+.crud-form .stock-input input{
+    width: 100%;
+}
 
 }
