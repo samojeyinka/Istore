@@ -266,8 +266,41 @@
 
 
 
+// categor dragging
 
 
+    .categories-container{
+        margin: 3rem;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        overflow-x: hidden;
+        margin: auto;
+        position: relative;
+        border-bottom: 1px solid var(--c-border-clr);
+    }
+   
+
+.category-box{
+   font-size: .89rem;
+   font-weight: 500;
+    text-align: center;
+    padding: .5rem 1rem;
+    min-width: fit-content;
+    background-color: var(--c-secondary-clr-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    cursor: grab;
+    border-radius: 1.1rem;
+}
+
+.category-box:hover{
+background: var(--c-secondary-clr);
+color: var(--c-secondary-clr-light);
+}
 
 @media screen and (max-width: 768px) {
    .topbar{
@@ -287,6 +320,8 @@
    .navbar-logo-box{
       display: none;
    }
+
+  
 
   
 }

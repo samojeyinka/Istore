@@ -1,2 +1,37 @@
 <%= render "shared/user/navbar" %>
-<h1>Home</h1>
+
+<div class="categories-container">
+
+    <% @categories.each do |category| %>
+<button class="category-box"><%= category.name %></button>
+<% end %>
+</div>
+
+
+
+
+
+<script>
+    let isDragging = false;
+    let startPosition = 0;
+    let startScroll = 0;
+
+    document.querySelector('.categories-container').addEventListener(
+        'mousedown',(e) => {
+            isDragging = true;
+            startPosition = e.clientX;
+            startScroll = document.querySelector('.categories-container').scrollLeft;
+        });
+
+    document.addEventListener(
+        'mousemove',(e) => {
+            if (!isDragging) return;
+            const dx = e.clientX - startPosition;
+            document.querySelector('.categories-container').scrollLeft = startScroll - dx;
+        });
+
+    document.addEventListener(
+        'mouseup',(e) => {
+            isDragging = false;
+        });
+</script>
