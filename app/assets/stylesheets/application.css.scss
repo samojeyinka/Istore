@@ -102,9 +102,18 @@
 
 // user
 
-.user-main{
+.user-main {
+   width: 100%;
    background: var(--c-primary-clr);
    min-height: 100vh !important;
+   
+}
+
+.user-container {
+   width: 90%;
+   background: var(--c-primary-clr);
+   height: 100%;
+   margin: auto !important;
 }
 .user-flex{
    width: 100%;
@@ -122,11 +131,12 @@
 
 
 .topbar-flex{
-   width: 100%;
+   width: 90%;
    height: 100%;
    display: flex;
    justify-content: space-between;
    align-items: center;
+   margin: auto;
 }
 
 .topbar-flex .wlc-heading{
@@ -173,6 +183,92 @@
    color: var(--c-dark-2);
 }
 
+
+// navbar
+
+.u-navbar{
+   margin: 1rem 0;
+ 
+}
+.u-navbar-flex{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  
+}
+
+
+.navbar-logo-box{
+   display: flex;
+   align-items: center;
+   gap: .4rem;
+}
+
+.navbar-logo-box .fa{
+   padding: .2rem;
+   font-size: 1.3rem;
+   color: var(--c-secondary-clr);
+   background: var(--c-secondary-clr-light);
+   border-radius: .3rem;
+}
+
+.navbar-logo-box .logo-text{
+   font-size: 1.6rem;
+   font-weight: 700;
+   color: var(--c-secondary-clr);
+}
+
+.search-box{
+   width: auto;
+   padding: .5rem 1rem;
+   background: var(--c-secondary-clr-light);
+   border-radius: .3rem;
+}
+
+.search-box-flex{
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+.search-box-flex .fa{
+   font-size: 1.1rem;
+   color: var(--c-secondary-clr);
+}
+
+.search-box-flex input{
+   padding: .5rem;
+   font-size: 1rem;
+   color: var(--c-dark-2);
+   background: var(--c-secondary-clr-light);
+}
+
+
+.u-navbar-links{
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+
+
+.u-navbar-links a{
+   font-size: 1rem;
+}
+
+.u-navbar-links .fa{
+   color: var(--c-secondary-clr);
+}
+
+.u-navbar-links b{
+   font-weight: 600;
+   color: var(--c-dark-1);
+}
+
+
+
+
+
+
 @media screen and (max-width: 768px) {
    .topbar{
       height: auto;
@@ -180,4 +276,17 @@
    .topbar-flex{
       flex-direction: column;
    }
+
+
+   .u-navbar-flex{
+      width: 100%;
+      flex-direction: column-reverse;
+     
+   }
+
+   .navbar-logo-box{
+      display: none;
+   }
+
+  
 }

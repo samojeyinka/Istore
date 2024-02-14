@@ -1,0 +1,33 @@
+<section class="u-navbar">
+    <div class="u-navbar-flex">
+        <div class="navbar-logo-box">
+            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                <span class="logo-text">Istore</span>
+        </div>
+        <div class="search-box">
+            <div class="search-box-flex">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" class="search-input"
+                 placeholder="Search essentials,groceries and more..." />
+                 <i class="fa fa-sort" aria-hidden="true"></i>
+            </div>
+        </div>
+        <ul class="u-navbar-links">
+                <li>
+                    <%= link_to root_path do %>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                        <b>Sign Up/Sign In</b>
+                        <% end %>
+                </li>
+
+                <span class="un-line"></span>
+
+                <li>
+                    <%= link_to root_path do %>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <b>Cart</b>
+                        <% end %>
+                </li> 
+            </ul>
+    </div>
+</section>
