@@ -1,13 +1,8 @@
 <%= render "shared/user/navbar" %>
 
-<div class="categories-container">
+<%= render "home/partials/categoriesBtn" %>
 
-    <% @categories.each do |category| %>
-<button class="category-box"><%= category.name %></button>
-<% end %>
-</div>
-
-<div class="top-products-con">
+<div class="top-products-con mb-5">
     <div class="tp-top-h">
         <h3>Top selling <span>items</span></h3>
     <%= link_to products_path do %>
@@ -17,35 +12,17 @@
     </div>
     
     <%= render '/shared/user/products' %>
-
 </div>
 
+<!-- Top categories -->
+<%= render "home/partials/categorieswithimage" %>
 
 
 
 
 
-<script>
-    let isDragging = false;
-    let startPosition = 0;
-    let startScroll = 0;
 
-    document.querySelector('.categories-container').addEventListener(
-        'mousedown',(e) => {
-            isDragging = true;
-            startPosition = e.clientX;
-            startScroll = document.querySelector('.categories-container').scrollLeft;
-        });
 
-    document.addEventListener(
-        'mousemove',(e) => {
-            if (!isDragging) return;
-            const dx = e.clientX - startPosition;
-            document.querySelector('.categories-container').scrollLeft = startScroll - dx;
-        });
 
-    document.addEventListener(
-        'mouseup',(e) => {
-            isDragging = false;
-        });
-</script>
+
+

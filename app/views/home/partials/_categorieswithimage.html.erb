@@ -1,0 +1,52 @@
+<div class="top-categories-con">
+    <div class="tp-top-h">
+        <h3>Shop From <span>Top categories</span></h3>
+    <a href="#">
+    <i class="fa-solid fa-less-than"></i>
+    <span>Scroll x-axis</span>
+    <i class="fa-solid fa-greater-than"></i>
+</a>
+    </div>
+<div class="top-categories-flex mt-3">
+    <% @categories.each do |category| %>
+    <div class="tc-box">
+    <%= link_to root_path do %>
+    <div class="tc-img-box">
+        <% if category.categoryImage.present?  %>
+        <%= image_tag(category.categoryImage) %>
+        <% else %>
+        <%= image_tag("http://via.placeholder.com/new-crud", class:"p-image") %>
+        <% end %>
+    </div>
+    <% end %>
+
+<button class="top-category-box"><%= category.name %></button>
+</div>
+<% end %>
+</div>
+</div>  
+
+<script>
+    let isDragging = false;
+    let startPosition = 0;
+    let startScroll = 0;
+
+    document.querySelector('.top-categories-flex').addEventListener(
+        'mousedown',(e) => {
+            isDragging = true;
+            startPosition = e.clientX;
+            startScroll = document.querySelector('.top-categories-flex').scrollLeft;
+        });
+
+    document.querySelector('.top-categories-flex').addEventListener(
+        'mousemove',(e) => {
+            if (!isDragging) return;
+            const dx = e.clientX - startPosition;
+            document.querySelector('.top-categories-flex').scrollLeft = startScroll - dx;
+        });
+
+    document.querySelector('.top-categories-flex').addEventListener(
+        'mouseup',(e) => {
+            isDragging = false;
+        });
+</script>
