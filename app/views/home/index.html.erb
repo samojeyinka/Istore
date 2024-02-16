@@ -11,11 +11,20 @@
     <% end %>
     </div>
     
-    <%= render '/shared/user/products' %>
+    <%= render '/shared/user/products', obj:@products %>
 </div>
 
 <!-- Top categories -->
 <%= render "home/partials/categorieswithimage" %>
+
+<div class="top-categories-con mt-3">
+    <div class="tp-top-h">
+        <h3>Latest <span>Items</span></h3>
+    </div>
+    <%= render '/shared/user/products', obj:@latestcatproducts %>
+    </div>
+
+
 
 
 

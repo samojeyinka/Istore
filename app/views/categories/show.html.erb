@@ -1,0 +1,10 @@
+
+<%= render "shared/user/navbar" %>
+<h1 class="text-center"><%= @category.name %></h1>
+
+<% if @products.length > 0 %>
+<%= render '/shared/user/products', obj:@products %>
+<% else %>
+<P class="nf">No Product Found</P>
+
+<% end %>

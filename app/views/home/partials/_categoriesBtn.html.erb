@@ -1,6 +1,6 @@
 <div class="categories-container">
     <% @categories.each do |category| %>
-<button class="category-box"><%= category.name %></button>
+<button class="category-box"><%= link_to category.name,category_path(category) %></button>
 <% end %>
 </div>
 

@@ -10,7 +10,7 @@
 <div class="top-categories-flex mt-3">
     <% @categories.each do |category| %>
     <div class="tc-box">
-    <%= link_to root_path do %>
+    <%= link_to category_path(category) do %>
     <div class="tc-img-box">
         <% if category.categoryImage.present?  %>
         <%= image_tag(category.categoryImage) %>
@@ -26,27 +26,28 @@
 </div>
 </div>  
 
+
 <script>
-    let isDragging = false;
-    let startPosition = 0;
-    let startScroll = 0;
+    let isDragging2 = false;
+    let startPosition2 = 0;
+    let startScroll2 = 0;
 
     document.querySelector('.top-categories-flex').addEventListener(
         'mousedown',(e) => {
-            isDragging = true;
-            startPosition = e.clientX;
-            startScroll = document.querySelector('.top-categories-flex').scrollLeft;
+            isDragging2 = true;
+            startPosition2 = e.clientX;
+            startScroll2 = document.querySelector('.top-categories-flex').scrollLeft;
         });
 
-    document.querySelector('.top-categories-flex').addEventListener(
+    document.addEventListener(
         'mousemove',(e) => {
-            if (!isDragging) return;
-            const dx = e.clientX - startPosition;
-            document.querySelector('.top-categories-flex').scrollLeft = startScroll - dx;
+            if (!isDragging2) return;
+            const dx = e.clientX - startPosition2;
+            document.querySelector('.top-categories-flex').scrollLeft = startScroll2 - dx;
         });
 
-    document.querySelector('.top-categories-flex').addEventListener(
+    document.addEventListener(
         'mouseup',(e) => {
-            isDragging = false;
+            isDragging2 = false;
         });
 </script>
