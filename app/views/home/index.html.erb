@@ -10,37 +10,13 @@
 <div class="top-products-con">
     <div class="tp-top-h">
         <h3>Top selling <span>items</span></h3>
-    <%= link_to root_path do %>
+    <%= link_to products_path do %>
     <span>View All</span>
     <i class="fa-solid fa-greater-than"></i>
     <% end %>
     </div>
     
-    <div class="top-products-flex">
-        <% @products.each do |p|%>
-        <%= link_to root_path do %>
-        <div class="p-box">
-            <div class="p-image-box">
-                <% if p.productImages.any? %>
-                <%= image_tag(p.productImages.first) %>
-                <% else %>
-                <%= image_tag("http://via.placeholder.com/new-crud", class:"p-image") %>
-                <% end %>
-            </div>
-            <div class="p-content">
-                <span class="p-name"><%= truncate(p.name, length:21) %></span>
-                <div class="p-price-flex">
-                    <b class="p-price">₦<%= number_with_delimiter(p.price, delimiter: ',') %></b>
-                <s class="p-old-price">₦<%= number_with_delimiter(p.price + p.price/3, delimiter:',' )%></s>
-            </div>
-            <div class="p-save">
-                <small class="save-price">Save - ₦<%= number_with_delimiter(p.price/3, delimiter:',') %></small>
-            </div>
-            </div>
-        </div>
-        <% end %>
-        <% end %>
-    </div>
+    <%= render '/shared/user/products' %>
 
 </div>
 
