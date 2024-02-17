@@ -1,6 +1,8 @@
 <%= render "shared/user/navbar" %>
-<section class="product-page">
-<div class="product-page-top">
+<section class="product-page" >
+<div class="product-page-top" data-controller="products"
+data-products-product-value="<%= @product.to_json %>"
+>
     <div class="product-pt-left">
         <div class="ppl-images-flex">
             <div class="ppl-main-img-box">
@@ -42,19 +44,28 @@
                 <h3>₦<%= number_with_delimiter(@product.price, delimiter: ',') %></h3>
                 <s class="p-old-price">₦<%= number_with_delimiter(@product.price + @product.price/3, delimiter:',' )%></s>
             </span>
+
             <div class="stocks-available">
-                <button class="stock-selector">SM</button>
-                <button class="stock-selector">ML</button>
-                <button class="stock-selector">XL</button>
-                <button class="stock-selector">XXL</button>
+                <% if @product.stocks.any? %>
+                <% @product.stocks.each do |s| %>
+                <% if s.amount > 0 %>
+                <button data-action="click->products#selectSize" value="<%= s.size%>" class="stock-selector"><%= s.size %></button>
+                <% else %>
+                <button value="<%= s.size%>" disabled class="stock-selector disabled" title="Out of stock"><%= s.size %></button>
+                <% end %>
+                <% end %>
+                <% else %>
+                _
+                <% end %>
+                
             </div>
 
             <div class="stock-selected">
-                <span>You selected:</span>
-                <button class="stock-selected-btn">SM</button>
+                <span id="indicator"></span>
+                <button id="selectedSize" class="stock-selected-btn"></button>
             </div>
 
-            <button class="add-to-cart">Add To Cart</button>
+            <button data-action="click->products#addToCart" class="add-to-cart">Add To Cart</button>
 
         </div>
     </div>

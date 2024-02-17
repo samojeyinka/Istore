@@ -656,6 +656,11 @@ height: 100%;
    color: var(--c-primary-clr);
 }
 
+.stocks-available .stock-selector.disabled:hover{
+   background: rgba(255, 0, 0, 0.066);
+   color: var(--c-dark-1);
+}
+
 .stock-selected{
    display: flex;
    align-items: center;
@@ -663,7 +668,7 @@ height: 100%;
 }
 
 .stock-selected .stock-selected-btn{
-   padding: .3rem;
+   padding: 0;
    border-radius: .2rem;
    background: var(--c-secondary-clr);
    color: var(--c-primary-clr);
