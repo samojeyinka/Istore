@@ -1,3 +1,87 @@
-
 <%= render "shared/user/navbar" %>
-<h1><%= @product.name %></h1>
+<section class="product-page">
+<div class="product-page-top">
+    <div class="product-pt-left">
+        <div class="ppl-images-flex">
+            <div class="ppl-main-img-box">
+                <% if @product.productImages.any? %>
+                <%= image_tag(@product.productImages.first) %>
+                <% else %>
+                <%= image_tag("http://via.placeholder.com/new-crud", class:"p-image") %>
+                <% end %>
+            </div>
+            <div class="ppl-small-images">
+                    <% if @product.productImages.any? %>
+                      <% @product.productImages.each do |image| %>
+                      <div class="ppl-small-img">
+                      <%= image_tag(image) %>
+                     </div>
+                          <% end %>
+                            <% else %>
+                            <div class="ppl-small-img">
+                              <%= image_tag("http://via.placeholder.com/300", class:"crud-image") %>
+                                </div>
+                              <% end %>
+            
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="product-pt-right">
+        <div class="pptr-flex">
+            <span class="stock-active text-success">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <span>In stock</span>
+            </span>
+
+            <h2 class="product-name">
+                <%= @product.name %>
+            </h2>
+            <span class="product-price">
+                <h3>₦<%= number_with_delimiter(@product.price, delimiter: ',') %></h3>
+                <s class="p-old-price">₦<%= number_with_delimiter(@product.price + @product.price/3, delimiter:',' )%></s>
+            </span>
+            <div class="stocks-available">
+                <button class="stock-selector">SM</button>
+                <button class="stock-selector">ML</button>
+                <button class="stock-selector">XL</button>
+                <button class="stock-selector">XXL</button>
+            </div>
+
+            <div class="stock-selected">
+                <span>You selected:</span>
+                <button class="stock-selected-btn">SM</button>
+            </div>
+
+            <button class="add-to-cart">Add To Cart</button>
+
+        </div>
+    </div>
+
+    </div>
+
+
+<div class="product-page-btm">
+    <div class="tp-top-h">
+        <h3>Product <span>details</span></h3>
+    </div>
+    <div class="product-description">
+    <p><%= @product.description %></p>
+    </div>
+</div>
+
+
+<div class="related-products-con mb-2">
+<div class="tp-top-h">
+    <h3>Related <span>products</span></h3>
+</div>
+<% if @similar_products.length > 0 %>
+<%= render '/shared/user/products', obj:@similar_products %>
+<% else %>
+<P class="nf">No Simlar Product Found</P>
+
+<% end %>
+</div>
+
+</section>
