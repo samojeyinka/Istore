@@ -1,0 +1,21 @@
+<h1>Checkout</h1>
+<%= form_with(model: @order, url: orders_path) do |form| %>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address %>
+  </div>
+  <h2>Cart Items</h2>
+  <ul>
+    <% @cart_items.each do |cart_item| %>
+      <li><%= cart_item.product.name %> - Quantity: <%= cart_item.quantity %></li>
+     #<%= cart_item.product.price %></li>
+    <% end %>
+  </ul>
+  <div class="actions">
+    <%= form.submit "Place Order" %>
+  </div>
+<% end %>

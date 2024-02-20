@@ -65,7 +65,7 @@ data-products-product-value="<%= @product.to_json %>"
                 <button id="selectedSize" class="stock-selected-btn"></button>
             </div>
 
-            <button data-action="click->products#addToCart" class="add-to-cart">Add To Cart</button>
+            <%= button_to "Add to Cart", add_to_cart_products_path(product_id: @product.id), method: :post %>
 
         </div>
     </div>

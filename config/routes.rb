@@ -22,8 +22,11 @@ Rails.application.routes.draw do
 
    get "admin" => "admin#index"
 
-   resources :products, only: [:show,:index]
-   resources :categories, only: [:show]
+   resources :products do
+    post 'add_to_cart', on: :collection
+  end
 
-   get 'cart' => "carts#show"
+   resources :categories, only: [:show]
+   resource :cart, only: [:show, :update, :destroy]
+   resources :orders, only: [:new, :create]
 end

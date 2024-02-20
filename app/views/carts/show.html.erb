@@ -1,11 +1,9 @@
-<div>
-    <h1>Cart page</h1>
-    <div id="errorContainer"></div>
-    <div data-controller="cart">
-    <div id="total">
-    
-    </div>
-    <button data-action="click->cart#checkout">Checkout</button>
-    <button data-action="click->cart#clear">Clear</button>
-    </div>
-    </div>
+
+
+<% @cart_items.each do |cart_item| %>
+  <%= cart_item.product.name %> - Quantity: <%= cart_item.quantity %>
+  <%= cart_item.product.price %>
+<% end %>
+
+
+<%= link_to "Checkout", new_order_path, method: :get %>
